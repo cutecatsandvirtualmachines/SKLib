@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{91f2826f-d28d-43a6-bd61-7c8685d62a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\std">
+      <UniqueIdentifier>{3387b068-f8b7-4afa-ad2f-83737131c7c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{2d0cd69e-88f7-4b44-9a8c-3375024c721e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\std">
+      <UniqueIdentifier>{53e958ec-b766-4d84-9862-bfddda85e2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\win">
+      <UniqueIdentifier>{f7ed0714-f803-44e3-8280-411def7d778a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\win">
+      <UniqueIdentifier>{fcc1aafa-40ad-4836-ba9f-346dee37de40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\communication">
+      <UniqueIdentifier>{82babcbb-9820-41f7-839f-655c9568cb8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\communication">
+      <UniqueIdentifier>{f06c958c-a536-48cd-b98c-bf6d6c75d430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arch">
+      <UniqueIdentifier>{8d3dcc84-6230-4bb3-92d9-592f5b1830ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CodeVirtualizer">
+      <UniqueIdentifier>{fe928dd2-65d0-4a9d-937b-76daa847feca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CodeVirtualizer">
+      <UniqueIdentifier>{42581f35-8f27-43b4-8958-b5a89e0cc95a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\iommu">
+      <UniqueIdentifier>{f69f4be4-2507-48a6-9164-d07521cabf2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\iommu">
+      <UniqueIdentifier>{05258892-649f-44ce-9028-60eb81ecb7cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="SKLib.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\classspnp.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\collector.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cpp.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cpu.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\data.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ioctl.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ListEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macros.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MemoryEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VectorEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RandEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\power.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MapEx.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\std.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\threading.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\spinlock.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\exception.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\queue.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sharedpool.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bitmap.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\paging.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acl.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\disassembler.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\registry.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bugcheck.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PE.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\smbios.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Cpuid.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Hyper-V.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Interrupts.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Intrinsics.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Msr.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Pte.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Registers.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Segmentation.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Svm.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arch\Vmx.h">
+      <Filter>Header Files\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Setup.hpp">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vdm.hpp">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VirtualizerSDKCustomVMsMacros.h">
+      <Filter>Header Files\CodeVirtualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VirtualizerSDKMacros.h">
+      <Filter>Header Files\CodeVirtualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\eventlogger.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\defender.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\signatures.h">
+      <Filter>Header Files\iommu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acpi.h">
+      <Filter>Header Files\iommu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\status.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringArray.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="include\winternlex.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ia32.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IDT.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\timing.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xor.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\collector.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpu.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\data.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ioctl.cpp">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MemoryEx.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringEx.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RandEx.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\power.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\threading.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\queue.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sharedpool.cpp">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bitmap.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\paging.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\winternlex.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acl.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\disassembler.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugcheck.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\smbios.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Setup.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defender.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acpi.cpp">
+      <Filter>Source Files\iommu</Filter>
+    </ClCompile>
+    <ClCompile Include="include\identity.h">
+      <Filter>Header Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\identity.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IDT.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\timing.cpp">
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\std.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xor.cpp">
+      <Filter>Source Files\std</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\cpu-helper.asm">
+      <Filter>Source Files\std</Filter>
+    </MASM>
+    <MASM Include="src\VirtualizerSDKCustomVmMacros.asm">
+      <Filter>Source Files\CodeVirtualizer</Filter>
+    </MASM>
+    <MASM Include="src\VirtualizerSDKMacros.asm">
+      <Filter>Source Files\CodeVirtualizer</Filter>
+    </MASM>
+    <MASM Include="src\IDT-helper.asm">
+      <Filter>Source Files\win</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+</Project>

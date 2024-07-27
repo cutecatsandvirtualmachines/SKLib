@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseWithSpoofer|x64">
+      <Configuration>ReleaseWithSpoofer</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{780FD52C-B046-4AFF-95F9-F6778247D26E}</ProjectGuid>
+    <TemplateGuid>{1bc93793-694f-48fe-9372-81e2b05556fd}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    <RootNamespace>SKLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+    <VcpkgTriplet>x64-windows-static</VcpkgTriplet>
+    <VcpkgHostTriplet>x64-windows-static</VcpkgHostTriplet>
+    <VcpkgUseMD>
+    </VcpkgUseMD>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'" Label="Vcpkg">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+    <VcpkgTriplet>x64-windows-static</VcpkgTriplet>
+    <VcpkgHostTriplet>x64-windows-static</VcpkgHostTriplet>
+    <VcpkgUseMD />
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <SDLCheck>false</SDLCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>kdmapper.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>BUILD_SPOOFER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Inf Include="SKLib.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\timing.h" />
+    <ClInclude Include="include\file.h" />
+    <ClInclude Include="include\acpi.h" />
+    <ClInclude Include="include\defender.h" />
+    <ClInclude Include="include\Arch\Cpuid.h" />
+    <ClInclude Include="include\Arch\Hyper-V.h" />
+    <ClInclude Include="include\Arch\Interrupts.h" />
+    <ClInclude Include="include\Arch\Intrinsics.h" />
+    <ClInclude Include="include\Arch\Msr.h" />
+    <ClInclude Include="include\Arch\Pte.h" />
+    <ClInclude Include="include\Arch\Registers.h" />
+    <ClInclude Include="include\Arch\Segmentation.h" />
+    <ClInclude Include="include\Arch\Svm.h" />
+    <ClInclude Include="include\Arch\Vmx.h" />
+    <ClInclude Include="include\bugcheck.h" />
+    <ClInclude Include="include\disassembler.h" />
+    <ClInclude Include="include\acl.h" />
+    <ClInclude Include="include\IDT.h" />
+    <ClInclude Include="include\bitmap.h" />
+    <ClInclude Include="include\exception.h" />
+    <ClInclude Include="include\classspnp.h" />
+    <ClInclude Include="include\collector.h" />
+    <ClInclude Include="include\cpp.h" />
+    <ClInclude Include="include\cpu.h" />
+    <ClInclude Include="include\data.h" />
+    <ClInclude Include="include\eventlogger.h" />
+    <ClInclude Include="include\ia32.h" />
+    <ClInclude Include="include\ioctl.h" />
+    <ClInclude Include="include\ListEx.h" />
+    <ClInclude Include="include\macros.h" />
+    <ClInclude Include="include\MemoryEx.h" />
+    <ClInclude Include="include\power.h" />
+    <ClInclude Include="include\StringEx.h" />
+    <ClInclude Include="include\utils.h" />
+    <ClInclude Include="include\VectorEx.h" />
+    <ClInclude Include="include\VirtualizerSDKCustomVMsMacros.h" />
+    <ClInclude Include="include\VirtualizerSDKMacros.h" />
+    <ClInclude Include="include\SKLib.h" />
+    <ClInclude Include="include\RandEx.h" />
+    <ClInclude Include="include\MapEx.h" />
+    <ClInclude Include="include\std.h" />
+    <ClInclude Include="include\spinlock.h" />
+    <ClInclude Include="include\threading.h" />
+    <ClInclude Include="include\sharedpool.h" />
+    <ClInclude Include="include\queue.h" />
+    <ClInclude Include="include\paging.h" />
+    <ClInclude Include="include\registry.h" />
+    <ClInclude Include="include\PE.h" />
+    <ClInclude Include="include\smbios.h" />
+    <ClInclude Include="include\winternlex.h" />
+    <ClInclude Include="include\Setup.hpp" />
+    <ClInclude Include="include\vdm.hpp" />
+    <ClInclude Include="include\signatures.h" />
+    <ClInclude Include="include\status.h" />
+    <ClInclude Include="include\StringArray.h" />
+    <ClInclude Include="include\xor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\timing.cpp" />
+    <ClCompile Include="src\std.cpp" />
+    <ClCompile Include="src\file.cpp" />
+    <ClCompile Include="src\identity.cpp" />
+    <ClCompile Include="include\identity.h" />
+    <ClCompile Include="src\acpi.cpp" />
+    <ClCompile Include="src\defender.cpp" />
+    <ClCompile Include="src\Setup.cpp" />
+    <ClCompile Include="src\smbios.cpp" />
+    <ClCompile Include="src\PE.cpp" />
+    <ClCompile Include="src\bugcheck.cpp" />
+    <ClCompile Include="src\registry.cpp" />
+    <ClCompile Include="src\disassembler.cpp" />
+    <ClCompile Include="src\acl.cpp" />
+    <ClCompile Include="src\IDT.cpp" />
+    <ClCompile Include="src\paging.cpp" />
+    <ClCompile Include="src\bitmap.cpp" />
+    <ClCompile Include="src\queue.cpp" />
+    <ClCompile Include="src\sharedpool.cpp" />
+    <ClCompile Include="src\power.cpp" />
+    <ClCompile Include="src\RandEx.cpp" />
+    <ClCompile Include="src\collector.cpp" />
+    <ClCompile Include="src\cpp.cpp" />
+    <ClCompile Include="src\cpu.cpp" />
+    <ClCompile Include="src\data.cpp" />
+    <ClCompile Include="src\ioctl.cpp" />
+    <ClCompile Include="src\MemoryEx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'">Disabled</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Neither</FavorSizeOrSpeed>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSpoofer|x64'">Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <ClCompile Include="src\StringEx.cpp" />
+    <ClCompile Include="src\utils.cpp" />
+    <ClCompile Include="src\threading.cpp" />
+    <ClCompile Include="src\winternlex.cpp" />
+    <ClCompile Include="src\xor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\IDT-helper.asm" />
+    <MASM Include="src\cpu-helper.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="src\VirtualizerSDKCustomVmMacros.asm" />
+    <MASM Include="src\VirtualizerSDKMacros.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
