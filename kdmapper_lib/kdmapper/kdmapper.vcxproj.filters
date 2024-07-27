@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\intel_driver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kdmapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\portable_executable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\intel_driver.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\intel_driver_resource.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kdmapper.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nt.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\portable_executable.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="headers">
+      <UniqueIdentifier>{04838667-84a9-40d4-9d3f-e7d7dca49ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{5005f6fd-fa6b-40d2-a3e3-522b2fc74dab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

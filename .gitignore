@@ -1,0 +1,68 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.vsidx
+*.lock
+*.suo
+*.db-shm
+*.db
+*.db-wal
+*.opendb
+*.tlog
+*.inf
+*.log
+*.recipe
+*.pdb
+*.cat
+*.sys
+*.cer
+*.inf
+*.ipch
+*.pdb
+*.tlog
+*.log
+/x64/Release/SKLibTest/SKLibTest.inf
+*.iobj
+*.ipdb
+*.ilk
+*.idb
+*.wsuo
+*.txt
+*.sqlite-journal
+/.vs/slnx.sqlite
+*.bin
+/.vs/SKLib/v17/fileList.bin
+/.vs/SKLib/v17/fileList.bin
+/.vs/SKLib/v17/fileList.bin
+/SKLib/vcpkg_installed
+/.vs/SKLib/v17
+/vcpkg_installed/x64-windows-static

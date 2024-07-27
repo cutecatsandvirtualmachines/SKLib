@@ -1,0 +1,7 @@
+Package: zydis
+Version: 3.1.0-1
+Architecture: x64-windows-static
+Multi-Arch: same
+Abi: cecbbb8c96fa07af604905fe62c27a80b237bbaea5c075aa6366502b56f43528
+Description: Fast and lightweight x86/x86-64 disassembler library.
+Status: install ok half-installed

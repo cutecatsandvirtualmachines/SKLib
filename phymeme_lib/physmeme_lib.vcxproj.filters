@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\kernel_ctx">
+      <UniqueIdentifier>{040c8387-476c-4aa5-aa2a-ca30465b41bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernel_ctx">
+      <UniqueIdentifier>{642c89a0-7989-4f5c-ae5a-f71e697abe16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\physmeme">
+      <UniqueIdentifier>{c4aa2f98-70d4-418e-894d-4e1975e2bad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{4fd2f117-66bb-4f75-af5b-b7e041a4dc48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\drv_image">
+      <UniqueIdentifier>{161b3714-a6cd-4b7b-a1f1-9b90b1f84aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\drv_image">
+      <UniqueIdentifier>{ed9d2db3-acef-42c0-880f-7f95dcca819d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="kernel_ctx\kernel_ctx.cpp">
+      <Filter>Source Files\kernel_ctx</Filter>
+    </ClCompile>
+    <ClCompile Include="drv_image\drv_image.cpp">
+      <Filter>Source Files\drv_image</Filter>
+    </ClCompile>
+    <ClCompile Include="map_driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel_ctx\dbrequest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kernel_ctx\kernel_ctx.h">
+      <Filter>Header Files\kernel_ctx</Filter>
+    </ClInclude>
+    <ClInclude Include="util\hook.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\util.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\nt.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="drv_image\drv_image.h">
+      <Filter>Header Files\drv_image</Filter>
+    </ClInclude>
+    <ClInclude Include="physmeme\physmeme.hpp">
+      <Filter>Header Files\physmeme</Filter>
+    </ClInclude>
+    <ClInclude Include="map_driver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="loadup.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="raw_driver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel_ctx\dbrequest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="dbrequest-helper.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>

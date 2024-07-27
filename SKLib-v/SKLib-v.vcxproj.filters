@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\dma">
+      <UniqueIdentifier>{54c09642-530b-43c0-b604-43910f20d952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\intel">
+      <UniqueIdentifier>{4e6ca140-0c52-491b-9055-caa95d129d8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\vmm">
+      <UniqueIdentifier>{1755e4c2-d6ed-4266-b6a6-8c779c2897cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spoof">
+      <UniqueIdentifier>{510b1c2c-a7e2-4780-898c-f7cc53c83ff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dma">
+      <UniqueIdentifier>{4aa7d043-061b-4d79-9481-201895c00a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\amd">
+      <UniqueIdentifier>{297bfd9f-3554-48aa-adf4-2ef5e4163a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intel">
+      <UniqueIdentifier>{7353bb99-41ec-4642-8806-9176342880de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vmm">
+      <UniqueIdentifier>{d156536d-4399-4288-8e01-11c56f2d5ee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spoof">
+      <UniqueIdentifier>{1ff2c50a-89ed-4a06-9a19-68e36dff47a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ddma.h">
+      <Filter>Header Files\dma</Filter>
+    </ClInclude>
+    <ClInclude Include="include\diskspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\eac.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efispoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EPT.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\event.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wmispoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\windowspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\volumespoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\usbspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\umutils.hpp">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\umspoof.hpp">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\spoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\smbiosspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nicspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ioctlhook.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gpuspoof.h">
+      <Filter>Header Files\spoof</Filter>
+    </ClInclude>
+    <ClInclude Include="include\iommu.h">
+      <Filter>Header Files\dma</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vdm.hpp">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vmcall.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vmexit.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VMExitHandlers.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VMMAllocator.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VMMDef.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vmoperations.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VMTimers.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VTxException.h">
+      <Filter>Header Files\intel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VTx.h">
+      <Filter>Header Files\intel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VMCSCheck.h">
+      <Filter>Header Files\intel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VmIDT.h">
+      <Filter>Header Files\vmm</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ddma.cpp">
+      <Filter>Source Files\dma</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eac.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\diskspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\efispoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gpuspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ioctrlhook.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nicspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\smbiosspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\usbspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\volumespoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wmispoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\windowspoof.cpp">
+      <Filter>Source Files\spoof</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VTx.cpp">
+      <Filter>Source Files\intel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VTxException.cpp">
+      <Filter>Source Files\intel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMTimers.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vmoperations.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMMDef.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMMAllocator.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vmexit.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMCSCheck.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vmcall.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\exception.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\event.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EPT.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\iommu.cpp">
+      <Filter>Source Files\dma</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SVM.cpp">
+      <Filter>Source Files\amd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VmIDT.cpp">
+      <Filter>Source Files\vmm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMExitHandlers.cpp">
+      <Filter>Source Files\intel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\VTx-helper.asm">
+      <Filter>Source Files\intel</Filter>
+    </MASM>
+    <MASM Include="src\SVM-support.asm">
+      <Filter>Source Files\amd</Filter>
+    </MASM>
+    <MASM Include="src\VmIDT-helper.asm">
+      <Filter>Source Files\vmm</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>
