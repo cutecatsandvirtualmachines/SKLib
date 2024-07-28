@@ -1,9 +1,9 @@
 # How to compile
 Only prerequisite is
 
-'''
+```
 vcpkg install
-'''
+```
 
 inside a vs command prompt.
 
