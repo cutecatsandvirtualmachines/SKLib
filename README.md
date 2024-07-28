@@ -50,3 +50,9 @@ A brief list of features and important details:
 - SMBIOS, GPU, NIC, Volume, Disk, Monitor, USB and EFI spoofers (working as of last tests 2 months ago on EAC)
 - Customizeable vmcall interface, as well as some other internal interfaces you can use to customize vmx-root behavior at runtime.
 - vmx-root error handling (very limited and broken and pasted but cba to fix it properly)
+
+## Conclusion
+This is not a complete list of features or disclaimers that would be needed for proper long term support. 
+The library is mainly focused on highly specific research tools and not on production grade code.
+
+I'll be happy to assist with major issues if needed though, so feel free open an issue on this repo.
