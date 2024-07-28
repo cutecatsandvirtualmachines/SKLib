@@ -66,3 +66,4 @@
 /SKLib/vcpkg_installed
 /.vs/SKLib/v17
 /vcpkg_installed/x64-windows-static
+/.vs
