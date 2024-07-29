@@ -38,19 +38,16 @@
 *.db-wal
 *.opendb
 *.tlog
-*.inf
 *.log
 *.recipe
 *.pdb
 *.cat
 *.sys
 *.cer
-*.inf
 *.ipch
 *.pdb
 *.tlog
 *.log
-/x64/Release/SKLibTest/SKLibTest.inf
 *.iobj
 *.ipdb
 *.ilk
@@ -68,3 +65,5 @@
 /vcpkg_installed/x64-windows-static
 /.vs
 /SKLib-v/vcpkg_installed/x64-windows-static
+/x64
+/SKLib/x64

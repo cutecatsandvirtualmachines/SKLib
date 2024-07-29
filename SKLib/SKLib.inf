@@ -1,0 +1,80 @@
+;
+; SKLib.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=SKLib.cat
+DriverVer = 12/17/2022,20.52.9.188
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+SKLib_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SKLib.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SKLib.DeviceDesc%=SKLib_Device, Root\SKLib ; TODO: edit hw-id
+
+[SKLib_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+SKLib.sys
+
+;-------------- Service installation
+[SKLib_Device.NT.Services]
+AddService = SKLib,%SPSVCINST_ASSOCSERVICE%, SKLib_Service_Inst
+
+; -------------- SKLib driver install sections
+[SKLib_Service_Inst]
+DisplayName    = %SKLib.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SKLib.sys
+
+;
+;--- SKLib_Device Coinstaller installation ------
+;
+
+[SKLib_Device.NT.CoInstallers]
+AddReg=SKLib_Device_CoInstaller_AddReg
+CopyFiles=SKLib_Device_CoInstaller_CopyFiles
+
+[SKLib_Device_CoInstaller_AddReg]
+;
+
+
+[SKLib_Device_CoInstaller_CopyFiles]
+;
+
+
+[SKLib_Device.NT.Wdf]
+KmdfService =  SKLib, SKLib_wdfsect
+[SKLib_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "SKLib Installation Disk"
+SKLib.DeviceDesc = "SKLib Device"
+SKLib.SVCDESC = "SKLib Service"
