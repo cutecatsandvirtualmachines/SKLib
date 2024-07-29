@@ -7,6 +7,9 @@ vcpkg install
 
 inside a vs command prompt.
 
+## Note:
+Debug compilation target is NOT available. Don't ask questions about it...
+## Note 2:
 If you get undefined symbols from zydis it's probably because you have installed the wrong version somehow.
 
 # How to use
