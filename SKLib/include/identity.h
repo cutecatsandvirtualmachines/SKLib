@@ -22,10 +22,6 @@ namespace identity {
 	PVOID MapIdentity(CR3 cr3);
 	PVOID MapIdentityUntracked(CR3 cr3);
 
-	DWORD64 LastMappedPml4Index();
-	DWORD64 LastMappedEprocess();
-	CR3 LastMappedCR3();
-
 	void ResetCache(bool bVmxRoot = false);
 	void ResetCacheUntracked(CR3 cr3);
 
