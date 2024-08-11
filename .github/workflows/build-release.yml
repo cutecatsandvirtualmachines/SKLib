@@ -108,7 +108,7 @@ jobs:
         if-no-files-found: 'error'
     - name: Create Release for Tag
       id: release_tag
-      uses: Akryum/release-tag
+      uses: Akryum/release-tag@v4.0.7
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
