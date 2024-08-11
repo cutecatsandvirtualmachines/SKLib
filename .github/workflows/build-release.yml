@@ -10,10 +10,18 @@ on:
     branches: [ "master" ]
     tags:
       - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+    inputs:
+      tag_name:
+        required: true
+        type: string
   pull_request:
     branches: [ "master" ]
     tags:
       - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+    inputs:
+      tag_name:
+        required: true
+        type: string
   workflow_dispatch:
 
 env:
