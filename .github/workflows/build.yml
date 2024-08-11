@@ -103,3 +103,15 @@ jobs:
         #   ignore: Do not output any warnings or errors, the action does not fail
         # Optional. Default is 'warn'
         if-no-files-found: 'error'
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: commit-${{ github.ref }}
+        body: |
+          Check commit comment for changes
+        draft: false
+        prerelease: false
