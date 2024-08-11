@@ -32,8 +32,7 @@ env:
   VCPKG_BINARY_SOURCES: 'clear'
   VCPKG_DEFAULT_TRIPLET: 'x64-windows-static'
 
-permissions:
-  contents: read
+permissions: write-all
 
 jobs:
   build:
