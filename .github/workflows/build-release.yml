@@ -119,5 +119,6 @@ jobs:
       uses: Akryum/release-tag@v4.0.7
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        INPUT_TAG_NAME: 'v1.0.0'
       with:
         tag_name: 'v1.0.0'
