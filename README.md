@@ -7,6 +7,12 @@ vcpkg install
 
 inside a vs command prompt.
 
+WDK latest version installed.
+
+## Build
+You can find the pre-compiled library in the github action's artifacts.
+It is recommended you build the library yourself.
+
 ## Note:
 Debug compilation target is NOT available. Don't ask questions about it...
 ## Note 2:
