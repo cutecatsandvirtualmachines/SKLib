@@ -8,20 +8,8 @@ name: MSBuild
 on:
   push:
     branches: [ "master" ]
-    tags:
-      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
-    inputs:
-      tag_name:
-        required: true
-        type: string
   pull_request:
     branches: [ "master" ]
-    tags:
-      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
-    inputs:
-      tag_name:
-        required: true
-        type: string
   workflow_dispatch:
 
 env:
@@ -114,11 +102,3 @@ jobs:
         #   ignore: Do not output any warnings or errors, the action does not fail
         # Optional. Default is 'warn'
         if-no-files-found: 'error'
-    - name: Create Release for Tag
-      id: release_tag
-      uses: Akryum/release-tag@v4.0.7
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-        INPUT_TAG_NAME: 'v1.0.0'
-      with:
-        tag_name: 'v1.0.0'
