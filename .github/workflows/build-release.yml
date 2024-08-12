@@ -57,6 +57,7 @@ jobs:
       run: mkdir -p $VCPKG_DEFAULT_BINARY_CACHE
     - name: Extract Subject and Body
       id: extract_message
+      shell: bash
       run: |
         # Extract the full commit message
         full_message="${{ github.event.head_commit.message }}"
