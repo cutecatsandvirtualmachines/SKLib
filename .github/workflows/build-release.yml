@@ -55,6 +55,25 @@ jobs:
     - name: "Create directory '${{ env.VCPKG_DEFAULT_BINARY_CACHE }}'"
       shell: cmd
       run: mkdir -p $VCPKG_DEFAULT_BINARY_CACHE
+    - name: Extract Subject and Body
+      id: extract_message
+      run: |
+        # Extract the full commit message
+        full_message="${{ github.event.head_commit.message }}"
+
+        # Extract the first line as the subject
+        subject=$(echo "$full_message" | head -n 1)
+
+        # Extract the rest as the body (starting from line 2)
+        body=$(echo "$full_message" | tail -n +2)
+
+        # Output the extracted subject and body
+        echo "Commit Subject: $subject"
+        echo "Commit Body: $body"
+
+        # Set as environment variables for later steps
+        echo "commit_subject=$subject" >> $GITHUB_ENV
+        echo "commit_body=$body" >> $GITHUB_ENV
     - name: Run vcpkg
       uses: lukka/run-vcpkg@v11
       with:
@@ -118,8 +137,9 @@ jobs:
           echo "matches=false" >> $GITHUB_ENV
         fi
     - name: Create ZIP Archive
+      if: env.matches == 'true'
       run: |
-        zip -r SKLib.zip "${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}"
+        tar -czf SKLib.tar.gz "${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}"
       shell: bash
     - name: Release
       uses: softprops/action-gh-release@v2
@@ -127,6 +147,7 @@ jobs:
       with:
         files: |
           '${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}/*'
-          SKLib.zip
+          SKLib.tar.gz
         token: ${{ secrets.GITHUB_TOKEN }}
-        tag_name: ${{ github.event.head_commit.message }}
+        tag_name: ${{ env.commit_subject }}
+        body: ${{ env.commit_body }}
