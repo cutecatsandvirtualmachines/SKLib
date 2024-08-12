@@ -152,7 +152,6 @@ jobs:
       if: env.matches == 'true'
       with:
         files: |
-          '${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}/*'
           SKLib.tar.gz
         token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ env.commit_subject }}
