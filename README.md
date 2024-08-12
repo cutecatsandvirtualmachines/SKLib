@@ -23,6 +23,62 @@ If you get undefined symbols from zydis it's probably because you have installed
 - Add your library director
 - Add your include directory for SKLib header files in C/C++ -> "Additional Include Directories"
 
+# Usage
+This is a basic example of library initialization:
+```
+NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING pRegistryPath) {
+    SKLib::Init();
+    DbgMsg("[ENTRY] Current driver name: %ls", SKLib::CurrentDriverName);
+
+    if (!MmIsAddressValid(SKLib::pUserInfo)) {
+        DbgMsg("[ENTRY] User info is invalid: %p", SKLib::pUserInfo);
+        return SKLIB_USER_INFO_INVALID;
+    }
+    *SKLib::pUserInfo = *(USERMODE_INFO*)pRegistryPath;
+
+    offsets = SKLib::pUserInfo->offsets;
+
+    winternl::InitImageInfo(pDriverObj);
+
+    identity::Init();
+
+    if (SKLib::pUserInfo->cleanupData.pDriverName[0]) {
+        if (SKLib::pUserInfo->cleanupData.hDevice) {
+            if (!winternl::ClearMmUnloadedDrivers(SKLib::pUserInfo->cleanupData.hDevice)) {
+                DbgMsg("[CLEANUP] MmUnloadedDrivers could not be cleared!");
+            }
+        }
+        if (SKLib::pUserInfo->cleanupData.dwTimestamp) {
+            if (!winternl::ClearPIDDBCacheTable(SKLib::pUserInfo->cleanupData.pDriverName, SKLib::pUserInfo->cleanupData.dwTimestamp)) {
+                DbgMsg("[CLEANUP] PIDDBCacheTable could not be cleared!");
+            }
+        }
+        if (!winternl::ClearKernelHashBucketList(SKLib::pUserInfo->cleanupData.pDriverName)) {
+            DbgMsg("[CLEANUP] KernelHashBucketList could not be cleared!");
+        }
+    }
+
+    vmm::Init();
+
+    if (!iommu::Init()) {
+        DbgMsg("[DMA] Failed initializing DMA protection!");
+        return SKLIB_IOMMU_NOT_PRESENT;
+    }
+
+    paging::RestoreMapPage();
+
+    winternl::FixSectionPermissions();
+
+    return STATUS_SUCCESS;
+}
+```
+
+Where the order of the ::Init() methods matters.  
+
+SKLib::Init() should always come first, as well as seting the user info and offsets.  
+
+The basic sample provided performs all needed initialization for all major modules (core, identity map, virtualization, iommuu, etc.) so from there you can look at [a sample driver implementation](https://github.com/cutecatsandvirtualmachines/CheatDriver).  
+
 # Modules
 
 ## kdmapper_lib
