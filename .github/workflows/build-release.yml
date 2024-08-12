@@ -102,3 +102,24 @@ jobs:
         #   ignore: Do not output any warnings or errors, the action does not fail
         # Optional. Default is 'warn'
         if-no-files-found: 'error'
+    - name: Check commit message format
+      id: check_message
+      run: |
+        # Get the latest commit message
+        commit_message=$(git log -1 --pretty=%B)
+        
+        # Regex pattern to match v*.*.*
+        if [[ "$commit_message" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          echo "Commit message matches the version format."
+          echo "matches=true" >> $GITHUB_ENV
+        else
+          echo "Commit message does NOT match the version format."
+          echo "matches=false" >> $GITHUB_ENV
+        fi
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      if: env.matches == 'true'
+      with:
+        files: '${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}/*'
+        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        tag_name: ${{ github.event.head_commit.message }}
