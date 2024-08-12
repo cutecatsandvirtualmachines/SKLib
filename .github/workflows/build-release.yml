@@ -122,5 +122,5 @@ jobs:
       if: env.matches == 'true'
       with:
         files: '${{env.SOLUTION_FILE_PATH}}/x64/${{env.BUILD_CONFIGURATION}}/*'
-        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ github.event.head_commit.message }}
