@@ -19,7 +19,7 @@ Debug compilation target is NOT available. Don't ask questions about it...
 If you get undefined symbols from zydis it's probably because you have installed the wrong version somehow.
 
 # How to use
-- Add SKLib.lib in "Additional Dependencies" in Librarian section for your kernel driver.
+- Add SKLib-v.lib or SKLib.lib in "Additional Dependencies" in Librarian section for your kernel driver (SKLib-v will automatically link SKLib for you).
 - Add your library director
 - Add your include directory for SKLib header files in C/C++ -> "Additional Include Directories"
 
