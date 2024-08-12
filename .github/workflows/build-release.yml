@@ -104,6 +104,7 @@ jobs:
         if-no-files-found: 'error'
     - name: Check commit message format
       id: check_message
+      shell: bash
       run: |
         # Get the latest commit message
         commit_message=$(git log -1 --pretty=%B)
