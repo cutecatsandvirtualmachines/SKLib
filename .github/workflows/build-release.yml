@@ -74,7 +74,9 @@ jobs:
 
         # Set as environment variables for later steps
         echo "commit_subject=$subject" >> $GITHUB_ENV
-        echo "commit_body=$body" >> $GITHUB_ENV
+        echo "commit_body<<EOF" >> $GITHUB_ENV
+        echo "$body" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
     - name: Run vcpkg
       uses: lukka/run-vcpkg@v11
       with:
