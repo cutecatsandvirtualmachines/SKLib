@@ -1,21 +1,9 @@
-#pragma once
-
-#include <immintrin.h>
-
-#include "macros.h"
-#include "cpp.h"
-#include "cpu.h"
-#include "StringEx.h"
-#include "std.h"
-
-#define RND_STRING_MAX_LEN 256
+#include <chrono>
+#include <random>
+#include <Windows.h> // Para Windows, se necessário para outras funções
 
 namespace random {
-	enum class SecurityLevel {
-		PSEUDO = 0,
-		SECURE,
-		PREDICTABLE
-	};
+
 	class Random {
 	private:
 		SecurityLevel _eSecLevel;
@@ -29,6 +17,8 @@ namespace random {
 
 		void setSeed(ULONG seed);
 		void setSecLevel(SecurityLevel eSecLevel);
+
+		void randomizeSeed(); // Novo método para randomizar o seed
 
 		size_t Next(size_t begin, size_t end);
 		int Next(int begin, int end);
@@ -49,7 +39,7 @@ namespace random {
 		template<typename T>
 		void random_shuffle(T* pStr, int sz) {
 			for (int i = sz - 1; i >= 0; --i) {
-				cpp::swap(pStr[i], pStr[Next(0, i + 1)]);
+				cpp::swap(pStr[i], pStr[Next(0, i + 1)]); 
 			}
 		}
 
@@ -76,7 +66,7 @@ namespace random {
 		template<typename T>
 		void predictable_shuffle(T* pStr, int sz) {
 			for (int i = sz - 1; i >= 0; --i) {
-				cpp::swap(pStr[i], pStr[NextPredictable(0, i)]);
+				cpp::swap(pStr[i], pStr[NextPredictable(0, i)]); 
 			}
 		}
 
@@ -103,4 +93,11 @@ namespace random {
 	void c_str(char* pOut, size_t sz);
 	void w_str(wchar_t* pOut, size_t sz);
 #endif
+}
+
+// Implementação do método randomizeSeed
+void random::Random::randomizeSeed() {
+	// Usando o tempo atual e uma fonte de entropia adicional para gerar um seed
+	auto now = std::chrono::system_clock::now().time_since_epoch().count();
+	_seed = static_cast<ULONG>(now & 0xFFFFFFFF);
 }
