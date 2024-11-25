@@ -503,10 +503,12 @@ void winternl::InitImageInfo(PVOID pImageBase)
         DbgMsg("[HOOK] Could not find PsGetThreadTeb");
         DebugBreak();
     }
-    else {
-        DbgMsg("[HOOK] ZwLockVirtualMemory: %p", winternl::NtLockVirtualMemory);
+    
+    winternl::NtLockVirtualMemory = (fnNtLockVirtualMemory)((ULONG64)winternl::ntoskrnlBase + offsets.NtLockVirtualMemory);
+    if (!offsets.NtLockVirtualMemory) {
+        DbgMsg2("[WINTERNL] Failed getting NtLockVirtualMemory!");
+        DebugBreak();
     }
-
     winternl::PsEnumProcesses = (fnPsEnumProcesses)((ULONG64)winternl::ntoskrnlBase + offsets.PsEnumProcesses);
     if (!offsets.PsEnumProcesses) {
         DbgMsg("[WINTERNL] Failed getting PsEnumProcesses!");
