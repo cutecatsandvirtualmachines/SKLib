@@ -100,6 +100,7 @@ struct OffsetDump {
 	ULONG64 PiDDBLock;
 	ULONG64 PiDDBCacheTable;
 	ULONG64 KiNmiInterruptStart;
+	ULONG64 NtLockVirtualMemory;
 };
 
 typedef struct _CLEANUP_DATA {
