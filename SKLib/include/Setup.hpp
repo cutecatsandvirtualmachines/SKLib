@@ -83,6 +83,7 @@ namespace setup {
 			ULONG64 PsQueryFullProcessImageName = parser.GetSymbolRVA(L"PsQueryFullProcessImageName");
 			ULONG64 KiNmiInterruptStart = parser.GetSymbolRVA(L"KiNmiInterruptStart");
 			ULONG64 WmipSMBiosVersionInfo = parser.GetSymbolRVA(L"WmipSMBiosVersionInfo");
+			ULONG64 NtLockVirtualMemory = parser.GetSymbolRVA(L"NtLockVirtualMemory"e);
 			if (WmipSMBiosTableLength == INVALID_OFFSET
 				|| PsEnumProcesses == INVALID_OFFSET
 				|| PspInsertProcess == INVALID_OFFSET
@@ -109,6 +110,7 @@ namespace setup {
 				|| PsQueryFullProcessImageName == INVALID_OFFSET
 				|| KiNmiInterruptStart == INVALID_OFFSET
 				|| WmipSMBiosVersionInfo == INVALID_OFFSET
+				|| NtLockVirtualMemory == INVALID_OFFSET
 				) {
 				printf("[-] ntoskrnl offsets invalid!\n");
 #ifdef BUILD_SPOOFER
@@ -139,6 +141,7 @@ namespace setup {
 			offsets.PsQueryFullProcessImageName = PsQueryFullProcessImageName;
 			offsets.KiNmiInterruptStart = KiNmiInterruptStart;
 			offsets.WmipSMBiosVersionInfo = WmipSMBiosVersionInfo;
+			offsets.NtLockVirtualMemory = NtLockVirtualMemory;
 		}
 #pragma endregion
 
