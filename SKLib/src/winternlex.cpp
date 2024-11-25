@@ -506,7 +506,7 @@ void winternl::InitImageInfo(PVOID pImageBase)
     
     winternl::NtLockVirtualMemory = (fnNtLockVirtualMemory)((ULONG64)winternl::ntoskrnlBase + offsets.NtLockVirtualMemory);
     if (!offsets.NtLockVirtualMemory) {
-        DbgMsg2("[WINTERNL] Failed getting NtLockVirtualMemory!");
+        DbgMsg("[WINTERNL] Failed getting NtLockVirtualMemory!");
         DebugBreak();
     }
     winternl::PsEnumProcesses = (fnPsEnumProcesses)((ULONG64)winternl::ntoskrnlBase + offsets.PsEnumProcesses);
