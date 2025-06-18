@@ -83,7 +83,7 @@ namespace setup {
 			ULONG64 PsQueryFullProcessImageName = parser.GetSymbolRVA(L"PsQueryFullProcessImageName");
 			ULONG64 KiNmiInterruptStart = parser.GetSymbolRVA(L"KiNmiInterruptStart");
 			ULONG64 WmipSMBiosVersionInfo = parser.GetSymbolRVA(L"WmipSMBiosVersionInfo");
-			ULONG64 NtLockVirtualMemory = parser.GetSymbolRVA(L"NtLockVirtualMemory"e);
+			ULONG64 NtLockVirtualMemory = parser.GetSymbolRVA(L"NtLockVirtualMemory");
 			if (WmipSMBiosTableLength == INVALID_OFFSET
 				|| PsEnumProcesses == INVALID_OFFSET
 				|| PspInsertProcess == INVALID_OFFSET
